@@ -1,4 +1,5 @@
 from flask import Flask, request
+from caesar import encrypt
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -12,9 +13,8 @@ def index():
 
 @app.route("/path/", methods=['POST']) # this is the path that will be returned.
 def path():
-    fname = request.form['first']
-    return "<h1> Hi there, " + fname + """</h1>
-<p> How are you? </p>
-"""
+    rotation = request.form['rot']
+    message = request.form['text']
+    return encrypt(str(message), int(rotation))
 
 app.run()

@@ -20,8 +20,15 @@
     </head>
     <body>
       <form action="/path/" method="POST">
-        <label for="fn">First name: </label>
-        <input id="fn"name="first" type="text" />
+        <label for="rot">Rotation amount: </label>
+        <input id="rot"name="rot" type="text" placeholder="Amount to rotate" value="0"/>
+        <br />
+        <br />
+        <br />
+        <label for="text">Message to encrypt: </label>
+        <br />
+        <textarea id="text" name="text" rows="3" cols="50" placeholder="Message to be encrypted"></textarea>
+        <br />
         <input type="submit" />
       </form>
       <!-- create your form here -->
