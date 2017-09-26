@@ -7,11 +7,11 @@ app.config['DEBUG'] = True
 
 form = ''.join(open('web-caesar.html', 'r').readlines())
 
-@app.route("/")
+@app.route("/") # Landing page
 def index():
-    return form.format("","0")
+    return form.format("", "0")
 
-@app.route("/path/", methods=['POST']) # this is the path that will be returned.
+@app.route("/path/", methods=['POST']) # This is the path that will be returned.
 def path():
     rotation = request.form['rot']
     message = request.form['text']
