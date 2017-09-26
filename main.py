@@ -9,12 +9,12 @@ form = ''.join(open('web-caesar.html', 'r').readlines())
 
 @app.route("/")
 def index():
-    return form.format("")
+    return form.format("","0")
 
 @app.route("/path/", methods=['POST']) # this is the path that will be returned.
 def path():
     rotation = request.form['rot']
     message = request.form['text']
-    return form.format(encrypt(str(message), int(rotation)))
+    return form.format(encrypt(str(message), int(rotation)), rotation)
 
 app.run()
